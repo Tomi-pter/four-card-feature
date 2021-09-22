@@ -46,7 +46,11 @@ main {
 
 h1 {
     font-family: 'PoppinsExtraLight';
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+}
+
+h2 {
+    font-size: 1.4rem;
 }
 
 span,
@@ -59,6 +63,11 @@ h2 {
 .intro {
     text-align: center;
     margin: 2rem 0 5rem;
+}
+
+.roles a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .duty {
@@ -83,8 +92,16 @@ h2 {
     margin: 1.2rem 0 .5rem;
 }
 
+.duty:hover,
+.duty:active,
+.duty:active {
+    transform: scale(1.05);
+    transition: 500ms;
+}
+
 .super {
     border-color: var(--cyan);
+    grid-area: super;
 }
 
 .super::after {
@@ -93,6 +110,7 @@ h2 {
 
 .team {
     border-color: var(--red);
+    grid-area: team;
 }
 
 .team::after {
@@ -101,6 +119,7 @@ h2 {
 
 .karma {
     border-color: var(--orange);
+    grid-area: karma;
 }
 
 .karma::after {
@@ -109,13 +128,37 @@ h2 {
 
 .calc {
     border-color: var(--blue);
+    grid-area: calc;
 }
 
 .calc::after {
     content: url(images/icon-calculator.svg);
 }
 
-@media screen and (min-width: 764px) {
+@media screen and (min-width: 700px) {
+    .roles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        grid-template-areas: "super team" "karma calc";
+    }
+    .duty {
+        margin: 0;
+        padding: 1rem 1.2rem 0;
+    }
+    .intro {
+        margin: 2rem 0 2.5rem;
+    }
+    .intro p {
+        padding: 0;
+        max-width: 35rem;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
     .roles {
         display: grid;
         grid-template-rows: repeat(4, minmax(0, 1fr));
@@ -147,7 +190,9 @@ h2 {
         margin: 2rem 0 2.5rem;
     }
     .intro p {
-        padding: 0 17.5rem;
+        padding: 0;
+        max-width: 35rem;
+        margin: auto;
     }
 }
 
