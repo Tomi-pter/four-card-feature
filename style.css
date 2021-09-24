@@ -65,6 +65,11 @@ h2 {
     margin: 2rem 0 5rem;
 }
 
+.roles {
+    display: flex;
+    flex-direction: column;
+}
+
 .roles a {
     text-decoration: none;
     color: inherit;
